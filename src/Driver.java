@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Driver {
@@ -11,14 +12,34 @@ public class Driver {
         contacts.addContact(contact2);
         contacts.addContact(contact3);
 
+        System.out.println("+---- Contact App ----+");
+        System.out.println("|1. List all Contacts |");
+        System.out.println("|2. Add new Contact   |");
+        System.out.println("|3. Remove Contact    |");
+        System.out.println("|4. Update Contact    |");
+        System.out.println("|5. Quit              |");
+        System.out.println("+---------------------+");
+
         while(true) {
+        System.out.println("Enter your option:");
             Scanner in = new Scanner(System.in);
-            String prompt = in.nextLine();
-            String usernameInput = InputCollector.getUserInput(prompt);
-            if (usernameInput.equals("quit")) {
+            String input = in.nextLine();
+            String usernameInput = InputCollector.getUserInput(input);
+            if (usernameInput.equals("5")) {
                 System.exit(0);
-            } else {
+            } else if (usernameInput.equals("1")) {
                 System.out.println(usernameInput);
+                for (int i = 0; i < contacts.getContacts().size(); i++) {
+                    System.out.print(i);
+                    System.out.println(contacts.getContacts().get(i).toString());
+                }
+            } else if (usernameInput.equals("2")) {
+                System.out.println("Enter name:");
+                String name = in.nextLine();
+                System.out.println("Enter mobile:");
+                String mobile = in.nextLine();
+                Contact contact = new Contact(name, mobile);
+                contacts.addContact(contact);
             }
         }
 

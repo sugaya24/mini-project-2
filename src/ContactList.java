@@ -2,11 +2,15 @@ import java.util.ArrayList;
 
 public class ContactList {
     // instance fields
-    private ArrayList contacts;
+    ArrayList<Contact> contacts = new ArrayList<>() {};
 
     // constructor
     public ContactList(ArrayList contacts) {
         this.contacts = contacts;
+    }
+
+    public ArrayList getContacts() {
+        return contacts;
     }
 
     public ContactList() {
