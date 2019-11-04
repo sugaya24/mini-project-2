@@ -40,6 +40,16 @@ public class Driver {
                 String mobile = in.nextLine();
                 Contact contact = new Contact(name, mobile);
                 contacts.addContact(contact);
+            } else if (usernameInput.equals("3")) {
+                System.out.println("Enter the index of the contact to remove:");
+                int index = in.nextInt();
+                if (index > contacts.getContacts().size() || index < 0) {
+                    System.out.println("Invalid number");
+                } else {
+                    Object removedName = contacts.getContacts().get(index);
+                    contacts.removeContact(index);
+                    System.out.println("Successfully removed" + removedName);
+                }
             }
         }
 

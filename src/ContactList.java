@@ -20,4 +20,8 @@ public class ContactList {
     public void addContact(Contact newContact) {
         contacts.add(newContact);
     }
+
+    public void removeContact(int index) {
+        contacts.remove(index);
+    }
 }
