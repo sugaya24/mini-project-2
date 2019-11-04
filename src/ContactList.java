@@ -24,4 +24,9 @@ public class ContactList {
     public void removeContact(int index) {
         contacts.remove(index);
     }
+
+    public void updateContact(int index, String name, String mobile) {
+        contacts.get(index).setName(name);
+        contacts.get(index).setNumber(mobile);
+    }
 }

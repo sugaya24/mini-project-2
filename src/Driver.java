@@ -50,6 +50,20 @@ public class Driver {
                     contacts.removeContact(index);
                     System.out.println("Successfully removed" + removedName);
                 }
+            } else if (usernameInput.equals("4")) {
+                System.out.println("Enter the index of the contact to update:");
+                int index = in.nextInt();
+                if (index > contacts.getContacts().size() || index < 0) {
+                    System.out.println("Invalid number");
+                } else {
+                    Object updatedName = contacts.getContacts().get(index);
+                    System.out.println("Enter name:");
+                    String name = in.next();
+                    System.out.println("Enter mobile:");
+                    String mobile = in.next();
+                    contacts.updateContact(index, name, mobile);
+                    System.out.println("Successfully update " + updatedName);
+                }
             }
         }
 
